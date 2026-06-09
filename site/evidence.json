@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Commit History Asset",
+    "caption": "A visual record of development activity.",
+    "image": "assets/screenshots/commit-history-asset.png"
+  },
+  {
+    "title": "Development Branch Asset",
+    "caption": "Branch workflow evidence showing organised project development.",
+    "image": "assets/screenshots/development-branch-asset.png"
+  },
+  {
+    "title": "Pull Request Evidence Asset",
+    "caption": "Pull request evidence showing review-ready contribution work.",
+    "image": "assets/screenshots/pull-request-evidence-asset.png"
+  },
+  {
+    "title": "Interface Evidence Asset",
+    "caption": "Application interface evidence from the semester project.",
+    "image": "assets/screenshots/interface-evidence-asset.png"
+  },
+  {
+    "title": "Code Contribution Asset",
+    "caption": "Source code evidence connected to the student's contribution.",
+    "image": "assets/screenshots/code-contribution-asset.png"
+  },
+  {
+    "title": "Documentation Evidence Asset",
+    "caption": "Documentation evidence supporting the student's project work.",
+    "image": "assets/screenshots/documentation-evidence-asset.png"
+  }
+]
