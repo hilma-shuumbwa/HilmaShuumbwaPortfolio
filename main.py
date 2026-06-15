@@ -1,4 +1,72 @@
 import flet as ft
+# --- INJECTED DYNAMIC ASSETS HELPERS ---
+import os
+import flet as ft
+
+FALLBACK_PROFILE = ['profile.avif']
+FALLBACK_GITHUB = ['all_branches.png', 'my_branch.png']
+FALLBACK_VIDEO = ['contribution-video.mp4']
+
+def get_profile_pic():
+    try:
+        p = os.path.join(os.path.dirname(__file__), "assets", "pictures", "profile")
+        if os.path.exists(p):
+            files = [f for f in os.listdir(p) if f.lower() not in ["tokens.txt", "token.txt", "gittoken.txt"]]
+            files = [f for f in files if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp', '.avif'))]
+            if files:
+                return f"/pictures/profile/{files[0]}"
+    except Exception:
+        pass
+    return f"/pictures/profile/{FALLBACK_PROFILE[0]}" if FALLBACK_PROFILE else None
+
+def get_github_evidence():
+    try:
+        p = os.path.join(os.path.dirname(__file__), "assets", "pictures", "github")
+        if os.path.exists(p):
+            files = [f for f in os.listdir(p) if f.lower() not in ["tokens.txt", "token.txt", "gittoken.txt"]]
+            files = [f for f in files if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
+            if files:
+                return [f"/pictures/github/{f}" for f in files]
+    except Exception:
+        pass
+    return [f"/pictures/github/{f}" for f in FALLBACK_GITHUB]
+
+def get_contribution_video():
+    try:
+        p = os.path.join(os.path.dirname(__file__), "assets", "videos", "contribution-video")
+        if os.path.exists(p):
+            files = [f for f in os.listdir(p) if f.lower() not in ["tokens.txt", "token.txt", "gittoken.txt"]]
+            files = [f for f in files if f.lower().endswith(('.mp4', '.mov', '.avi', '.mkv'))]
+            if files:
+                return f"/videos/contribution-video/{files[0]}"
+    except Exception:
+        pass
+    return f"/videos/contribution-video/{FALLBACK_VIDEO[0]}" if FALLBACK_VIDEO else None
+
+def get_video_control(page):
+    video_src = get_contribution_video()
+    if not video_src:
+        return ft.Container()
+    if hasattr(ft, "Video"):
+        try:
+            if hasattr(ft, "VideoMedia"):
+                media = ft.VideoMedia(video_src)
+                return ft.Video(playlist=[media], autoplay=False, aspect_ratio=16/9, expand=True)
+            else:
+                return ft.Video(src=video_src, autoplay=False, aspect_ratio=16/9, expand=True)
+        except Exception:
+            pass
+    # Fallback to browser launch
+    return ft.Column([
+        ft.Text("Embedded video player requires a newer version of Flet.", size=11, color=MUTED),
+        ft.ElevatedButton(
+            "Play Video",
+            icon=ft.Icons.PLAY_ARROW,
+            on_click=lambda _: page.launch_url(video_src)
+        )
+    ], spacing=5, alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER)
+# --- END INJECTED DYNAMIC ASSETS HELPERS ---
+
 
 BG = '#07101E'
 SURFACE = '#101B2D'
@@ -59,6 +127,17 @@ def main(page: ft.Page):
             padding=28,
             content=ft.ResponsiveRow([
                 ft.Container(tile('Profile', [
+                    ft.Container(
+                        content=ft.Image(
+                            src=get_profile_pic(),
+                            width=100,
+                            height=100,
+                            fit=ft.ImageFit.COVER if hasattr(ft, "ImageFit") else ft.BoxFit.COVER,
+                            border_radius=50
+                        ),
+                        alignment=ft.alignment.Alignment(0, 0),
+                        margin=ft.Margin.only(bottom=10)
+                    ) if get_profile_pic() else ft.Container(),
                     ft.Text("Department: Electronics and Computer", color=TEXT),
                     ft.Text("Suggested role/area: Backend/Firebase", color=MUTED),
                     ft.Text("Match status: MATCHED - LIVE GITHUB USERNAME APPLIED", color=SUCCESS),
@@ -78,10 +157,21 @@ def main(page: ft.Page):
                     ft.Text("git clone \"Replace with your own fork URL after creating the fork.\"\ncd \"Replace with your cloned repository folder\"\ngit status\ngit checkout -b portfolio/shuumbwa-hmn-sitespy-portfolio\ngit add README.md index.html main.py\ngit commit -m \"Update Hilma Shuumbwa SiteSpy portfolio\"\ngit push -u origin portfolio/shuumbwa-hmn-sitespy-portfolio", color=TEXT, selectable=True),
                 ], SUCCESS), col={'xs': 12, 'md': 6}),
                 ft.Container(tile('Evidence', [
-                    ft.Text('Add screenshots, code notes, terminal output, testing evidence, or review notes for work personally verified by the student.', color=TEXT),
+                    ft.Text('GitHub Evidence:', color=MUTED, size=13),
+                    ft.Column([
+                        ft.Container(
+                            content=ft.Column([
+                                ft.Image(src=img, fit=ft.ImageFit.CONTAIN if hasattr(ft, "ImageFit") else ft.BoxFit.CONTAIN, border_radius=8),
+                                ft.Text(img.split('/')[-1], size=11, color=MUTED)
+                            ], spacing=5, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                            border=ft.Border.all(1, BORDER),
+                            border_radius=8,
+                            padding=10
+                        ) for img in get_github_evidence()
+                    ], spacing=10) if get_github_evidence() else ft.Text('No GitHub evidence found.', color=TEXT),
                 ]), col={'xs': 12, 'md': 6}),
                 ft.Container(tile('Individual Video', [
-                    ft.Text('Manual link required. Maximum duration: 1 minute 30 seconds.', color=GOLD, weight=ft.FontWeight.BOLD),
+                    get_video_control(page) if get_contribution_video() else ft.Text('No contribution video found.', color=TEXT),
                 ], SUCCESS), col={'xs': 12, 'md': 6}),
                 ft.Container(tile('Handover Note', [
                     ft.Text('Use your own fork or portfolio repository. Do not claim commits or authorship that are not personally yours.', color=TEXT),

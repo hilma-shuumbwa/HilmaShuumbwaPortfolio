@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" width="100%" height="100%">
+  <rect width="480" height="270" rx="8" fill="#06243f"/>
+  <circle cx="240" cy="120" r="35" fill="none" stroke="#0fa3b1" stroke-width="4"/>
+  <polygon points="230,100 230,140 260,120" fill="#0fa3b1"/>
+  <text x="240" y="195" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Contributor video coming soon</text>
+  <text x="240" y="220" fill="#0fa3b1" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Showcase presentation pending</text>
+</svg>
