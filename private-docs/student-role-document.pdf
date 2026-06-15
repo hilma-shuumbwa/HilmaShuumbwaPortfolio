@@ -1,0 +1,119 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2029 >>
+stream
+BT
+/F1 16 Tf
+72 760 Td
+(Student Role Document) Tj
+/F1 10 Tf
+0 -24 Td
+(# Student Role Document) Tj
+0 -14 Td
+0 -12 Td
+(## Student Name) Tj
+0 -14 Td
+(Hilma Shuumbwa) Tj
+0 -14 Td
+0 -12 Td
+(## Project Name) Tj
+0 -14 Td
+(SiteSpy) Tj
+0 -14 Td
+0 -12 Td
+(## Portfolio Purpose) Tj
+0 -14 Td
+(This document supports the student's private preparation for the Computer Programming I port) Tj
+0 -14 Td
+(folio showcase.) Tj
+0 -14 Td
+0 -12 Td
+(## Individual Role Summary) Tj
+0 -14 Td
+(Backend) Tj
+0 -14 Td
+0 -12 Td
+(Role details should be confirmed against the group's final contribution record.) Tj
+0 -14 Td
+0 -12 Td
+(## Technical Contribution) Tj
+0 -14 Td
+(The contribution evidence focuses on Firebase-backed app support, data workflow review, conf) Tj
+0 -14 Td
+(iguration checks, and delivery documentation.) Tj
+0 -14 Td
+0 -12 Td
+(## Collaboration Contribution) Tj
+0 -14 Td
+(The student should describe communication, task tracking, review, and team handover work tha) Tj
+0 -14 Td
+(t they personally completed.) Tj
+0 -14 Td
+0 -12 Td
+(## Evidence To Capture) Tj
+0 -14 Td
+(- Commit History Asset) Tj
+0 -14 Td
+(- Development Branch Asset) Tj
+0 -14 Td
+(- Pull Request Evidence Asset) Tj
+0 -14 Td
+(- Interface Evidence Asset) Tj
+0 -14 Td
+(- Code Contribution Asset) Tj
+0 -14 Td
+(- Documentation Evidence Asset) Tj
+0 -14 Td
+0 -12 Td
+(## Suggested 1 Minute 30 Second Video Outline) Tj
+0 -14 Td
+(- 0:00-0:15: Introduce name, project, and contribution area.) Tj
+0 -14 Td
+(- 0:15-0:45: Show the main evidence asset or code area.) Tj
+0 -14 Td
+(- 0:45-1:10: Explain a challenge and solution.) Tj
+0 -14 Td
+(- 1:10-1:30: Summarise learning outcomes and final project value.) Tj
+0 -14 Td
+0 -12 Td
+(## Submission Checklist) Tj
+0 -14 Td
+(- Static site opens locally.) Tj
+0 -14 Td
+(- Evidence assets are present.) Tj
+0 -14 Td
+(- Certificate section is reviewed.) Tj
+0 -14 Td
+(- Video section is ready for the final link or upload.) Tj
+0 -14 Td
+(- GitHub Pages workflow uploads `site/`.) Tj
+0 -14 Td
+(- Tokens and private docs are not committed.) Tj
+0 -14 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer << /Root 1 0 R /Size 6 >>
+startxref
+2392
+%%EOF
