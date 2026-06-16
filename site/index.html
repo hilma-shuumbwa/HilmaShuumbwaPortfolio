@@ -1,3 +1,4 @@
+<!-- DEPLOY_MARKER: hilmashuumbwaportfolio 20260616T072759Z 82f4ea1b -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +38,8 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
+    a { color: #34D399; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     ::selection { background: #34D39944; color: var(--text); }
 
     /* ── SPLASH ── */
@@ -162,30 +165,27 @@
       display: flex; align-items: center; gap: 10px;
       font-size: 0.84rem; color: #407060;
     }
-    .meta-row svg { flex-shrink: 0; opacity: 0.7; }
-    .meta-row a { color: #EDFBF5; font-weight: 500; transition: color 0.2s; }
-    .meta-row a:hover { color: #34D399; text-decoration: none; }
+    .meta-row a { color: #407060; }
+    .meta-row a:hover { color: #34D399; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       background: #34D399; color: #040E09;
-      font-weight: 700; font-size: 0.88rem;
-      padding: 11px 22px; border-radius: 10px;
-      border: none; cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      box-shadow: 0 4px 20px #34D39944;
+      font-size: 0.88rem; font-weight: 700;
+      padding: 10px 22px; border-radius: 10px;
+      transition: opacity 0.2s, transform 0.15s; text-decoration: none;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px #34D39966; text-decoration: none; }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); text-decoration: none; }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
-      background: transparent;
-      border: 1px solid #0E3020; color: #EDFBF5;
-      font-weight: 600; font-size: 0.88rem;
-      padding: 11px 22px; border-radius: 10px;
-      transition: all 0.2s ease; text-decoration: none;
+      border: 1px solid #0E3020; color: #407060;
+      font-size: 0.88rem; font-weight: 600;
+      padding: 10px 22px; border-radius: 10px;
+      transition: all 0.2s; text-decoration: none;
     }
-    .btn-ghost:hover { border-color: #34D399; color: #34D399; transform: translateY(-2px); text-decoration: none; }
+    .btn-ghost:hover { border-color: #34D39944; color: #EDFBF5; text-decoration: none; }
+
+    /* ── AVATAR / PROFILE IMAGE ── */
     .profile-img {
       width: 148px; height: 148px; border-radius: 50%;
       object-fit: cover;
@@ -506,7 +506,7 @@
         </div>
         <div class="meta-row">
           <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M13 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="1.3"/><path d="M1 6h14" stroke="currentColor" stroke-width="1.3"/><path d="M5 1v5M11 1v5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-          <span>SiteSpy Expo Project &nbsp;·&nbsp; 2025</span>
+          <span>SiteSpy Expo Project &nbsp;&middot;&nbsp; 2025</span>
         </div>
       </div>
       <div class="hero-actions">
@@ -629,7 +629,7 @@
           <div class="empty-icon">
             <svg viewBox="0 0 64 64" fill="none" width="64" height="64">
               <rect width="64" height="64" rx="16" fill="#0E3020"/>
-              <rect x="16" y="12" width="32" height="40" rx="4" fill="#407060" opacity=".2" stroke="#407060" stroke-width="1.5" opacity=".3"/>
+              <rect x="16" y="12" width="32" height="40" rx="4" fill="#407060" opacity=".2" stroke="#407060" stroke-width="1.5"/>
               <circle cx="32" cy="35" r="8" fill="none" stroke="#F59E0B" stroke-width="2" opacity=".6"/>
               <path d="M29 35l2 2 4-4" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity=".6"/>
               <rect x="22" y="20" width="20" height="3" rx="1.5" fill="#407060" opacity=".3"/>
@@ -650,13 +650,13 @@
       <h2>Contribution Video</h2>
     </div>
     <div class="video-wrap reveal">
-          <video controls preload="metadata" class="video-player" poster="">
+          <video controls preload="metadata" class="video-player">
             <source src="../assets/videos/contribution-video/contribution-video.mp4" type="video/mp4">
             <p>Your browser does not support video. <a href="../assets/videos/contribution-video/contribution-video.mp4">Download it here</a>.</p>
           </video>
           <div class="video-meta">
             <p class="video-label">Contribution Video</p>
-            <p class="video-sub">Contribution video &nbsp;·&nbsp; max 1 min 30 sec</p>
+            <p class="video-sub">Contribution video &nbsp;&middot;&nbsp; max 1 min 30 sec</p>
           </div>
         </div>
   </div>
@@ -730,7 +730,6 @@
   reveals.forEach(function(el) { io.observe(el); });
 
   // Active nav link on scroll
-  var sections = document.querySelectorAll("section, [id]");
   var navLinks = document.querySelectorAll(".nav-link");
   window.addEventListener("scroll", function() {
     var scrollY = window.scrollY + 80;
